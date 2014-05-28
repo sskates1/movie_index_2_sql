@@ -2,19 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Movie Database</title>
     <link rel="stylesheet" href="styles.css">
   </head>
+  <header>
+    <ul class="navigation">
+      <li><img id = "logo-image" src = "filmreel.jpg"></li>
+      <li><a id = "brand" href = "/">Movie Database</a></li>
+      <li><a class = "nav-link" href = "/movies">Movies</a></li>
+      <li><a class = "nav-link" href = "/actors">Actors</a></li>
+       <li>
+        <form action="/actors" method="post">
+          <input type="text" id="search_movies" name="actor" value="<%=params[:actor]%>" size="25" placeholder="Search Actors"/>
+          <input type="submit" />
+        </form>
+      </li>
+      <li>
+        <form action="/movies" method="post">
+          <input type="text" id="search_actors" name="movie" value="<%= params[:movie]%>" size="25" placeholder="Search Movies"/>
+          <input type="submit" />
+        </form>
+      </li>
+
+    </ul>
+  </header>
 
   <body>
-    <header>
-      <ul class="navigation">
-        <li><img id = "logo-image" src = "filmreel.jpg"></li>
-        <li><a id = "brand" href = "/">Best Movie Database EVER</a></li>
-        <li><a class = "nav-link" href = "/movies">Movies</a></li>
-        <li><a class = "nav-link" href = "/actors">Actors</a></li>
-      </ul>
-    </header>
 
 
     <div id='main_content'>
