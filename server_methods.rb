@@ -40,7 +40,7 @@ def get_actors()
 end
 
 def get_actor(actor_id)
-  query = "SELECT actors.id as actorID, movies.id as movieID, actors.name as name, movies.title, character
+  query = "SELECT actors.id as actorID, actors.name as name, character
           FROM actors
           JOIN cast_members on cast_members.actor_id = actors.id
           JOIN movies on movies.id = cast_members.movie_id
