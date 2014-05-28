@@ -1,40 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Movies List</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-
-  <body>
-
-    <h1>
-      Table of Movies:
-    </h1><br/><br/>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Rating</th>
-            <th>Genre</th>
-            <th>Studio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @movies.each do |movie_info| %>
-            <tr>
-              <td><a href="/movies/<%="#{movie_info[:id]}"%>"><%="#{movie_info[:title]}"%></a></td>
-              <td><%="#{movie_info[:year]}"%></a></td>
-              <td><%="#{movie_info[:rating]}"%></a></td>
-              <td><%="#{movie_info[:genre]}"%></a></td>
-              <td><%="#{movie_info[:studio]}"%></a></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <br/><br/>
-      <a href="/">Back</a>
-    </h1>
-  </body>
-</html>
+<h1>
+  Table of Movies:
+</h1><br/><br/>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Rating</th>
+      <th>Genre</th>
+      <th>Studio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie_info| %>
+      <tr>
+        <td><a href="/movies/<%="#{movie_info["id"]}"%>"><%="#{movie_info["title"]}"%></a></td>
+        <td><%="#{movie_info["year"]}"%></a></td>
+        <td><%="#{movie_info["rating"]}"%></a></td>
+        <td><%="#{movie_info["genre"]}"%></a></td>
+        <td><%="#{movie_info["studio"]}"%></a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/><br/>
+<a href="/">Back</a>
