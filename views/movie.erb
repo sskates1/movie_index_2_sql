@@ -13,10 +13,10 @@
   </thead>
   <tbody>
     <tr>
-      <td><%="#{@movie[0]["year"]}"%></a></td>
-      <td><%="#{@movie[0]["rating"]}"%></a></td>
-      <td><%="#{@movie[0]["genre"]}"%></a></td>
-      <td><%="#{@movie[0]["studio"]}"%></a></td>
+      <td><%="#{@movie[0]["year"]}"%></td>
+      <td><%="#{@movie[0]["rating"]}"%></td>
+      <td><%="#{@movie[0]["genre"]}"%></td>
+      <td><%="#{@movie[0]["studio"]}"%></td>
     </tr>
   </tbody>
 </table>
@@ -25,12 +25,12 @@
     <tr>
       <td>Actor</td>
       <td>Character</td>
-    </tr>>
+    </tr>
   </thead>
   <tbody>
     <% @cast.each do |member| %>
       <tr>
-        <td><a href="/actors/#{member["actorID"]}"><%= member["actor_name"] %></a></td>
+        <td><a href="<%="/actors/#{member["actorid"]}"%>"><%= member["actor_name"] %></a></td>
         <td><%= member["character"] %></td>
       </tr>
     <% end %>

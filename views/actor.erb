@@ -1,0 +1,22 @@
+<h1>
+  <%= @actor[0]["title"] %>
+</h1>
+<br/>
+<table border="1" style="width:300px">
+  <thead>
+    <tr>
+      <td>Movie</td>
+      <td>Character</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><a href="<%="/actors/#{movie["movieid"]}"%>"><%= movie["title"] %></a></td>
+        <td><%= movie["character"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/><br/>
+<a href="/">Back</a>

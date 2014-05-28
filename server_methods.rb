@@ -41,10 +41,10 @@ end
 
 def get_actor(actor_id)
   query = "SELECT actors.id as actorID, movies.id as movieID, actors.name as name, movies.title, character
-            FROM actors
-            JOIN cast_members on cast_members.actor_id = actors.id
-            JOIN movies on movies.id = cast_members.movie_id
-            WHERE actors.id = $1 "
+          FROM actors
+          JOIN cast_members on cast_members.actor_id = actors.id
+          JOIN movies on movies.id = cast_members.movie_id
+          WHERE actors.id = $1 "
   actor = db_connection do |conn|
     conn.exec_params(query, [actor_id])
   end
@@ -57,7 +57,8 @@ def get_actor(actor_id)
   movies = db_connection do |conn|
     conn.exec_params(query, [actor_id])
   end
-
+  actor = actor.to_a
+  movies = movies.to_a
   return actor, movies
 end
 
@@ -78,7 +79,8 @@ def get_movie(movie_id)
   cast = db_connection do |conn|
     conn.exec_params(query, [movie_id])
   end
-
+  movie = movie.to_a
+  cast = cast.to_a
   return movie, cast
 end
 

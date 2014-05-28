@@ -24,5 +24,6 @@ end
 
 get '/actors/:actor_id' do
   @actor_id = params[:actor_id]
+  @actor, @movies = get_actor(@actor_id)
 	erb :actor
 end
