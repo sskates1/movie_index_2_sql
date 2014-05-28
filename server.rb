@@ -1,9 +1,4 @@
 require_relative 'server_methods'
-<<<<<<< HEAD
-require sinatra
-require pg
-
-=======
 require 'sinatra'
 require 'pg'
 
@@ -26,4 +21,3 @@ end
 get '/:actor' do
 	erb :actor
 end
->>>>>>> 0f4e57298af1f53a66cbbb1003307cc5b81e50fd
