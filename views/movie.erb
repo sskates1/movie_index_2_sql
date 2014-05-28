@@ -1,31 +1,40 @@
 <h1>
-  Table of Movies:
+  <%= @movie[0]["title"] %>
 </h1>
 <br/>
-<br/>
-<div>
-  <table>
-    <thead>
+<table border="1" style="width:600px">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Rating</th>
+      <th>Genre</th>
+      <th>Studio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%="#{@movie[0]["year"]}"%></a></td>
+      <td><%="#{@movie[0]["rating"]}"%></a></td>
+      <td><%="#{@movie[0]["genre"]}"%></a></td>
+      <td><%="#{@movie[0]["studio"]}"%></a></td>
+    </tr>
+  </tbody>
+</table>
+<table border="1" style="width:300px">
+  <thead>
+    <tr>
+      <td>Actor</td>
+      <td>Character</td>
+    </tr>>
+  </thead>
+  <tbody>
+    <% @cast.each do |member| %>
       <tr>
-        <th>Title</th>
-        <th>Year</th>
-        <th>Rating</th>
-        <th>Genre</th>
-        <th>Studio</th>
-
+        <td><a href="/actors/#{member["actorID"]}"><%= member["actor_name"] %></a></td>
+        <td><%= member["character"] %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% @movie.each do |movie_info| %>
-
-        <li><a href="/movies/<%="#{movie_info["id"]}"%>"><%="#{movie_info["title"]}"%></a></li>
-
-        <br/>
-      <% end %>
-
-
-    </tbody>
-  </table>
-  <br/><br/>
-  <a href="/">Back</a>
-</div>
+    <% end %>
+  </tbody>
+</table>
+<br/><br/>
+<a href="/">Back</a>

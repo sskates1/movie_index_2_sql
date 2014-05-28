@@ -11,7 +11,9 @@ get '/movies' do
 	erb :movies
 end
 
-get '/:movie' do
+get '/movies/:movie_id' do
+  @movie_id = params[:movie_id]
+  @movie, @cast = get_movie(@movie_id)
 	erb :movie
 end
 
@@ -20,6 +22,7 @@ get '/actors' do
 	erb :actors
 end
 
-get '/:actor' do
+get '/actors/:actor_id' do
+  @actor_id = params[:actor_id]
 	erb :actor
 end
