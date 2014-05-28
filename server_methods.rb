@@ -13,7 +13,7 @@ def db_connection
 end
 
 def get_movies()
-  query = "SELECT id, title, year, rating, genres.name as genre, studios.name as studio
+  query = "SELECT movies.id, title, year, rating, genres.name as genre, studios.name as studio
             FROM movies
             LEFT JOIN studios on studios.id = movies.stuido_id
             LEFT JOIN genres on genres.id = movies.genre_id"
