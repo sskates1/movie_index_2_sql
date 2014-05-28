@@ -1,5 +1,4 @@
 require 'pg'
-require 'sinatra'
 
 def db_connection
   begin
