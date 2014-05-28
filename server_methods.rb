@@ -34,7 +34,7 @@ def get_actors()
   end
   actors = actors.to_a
   actors = actors.sort_by do |actor|
-    actors["name"]
+    actor["name"]
   end
   return actors
 end
