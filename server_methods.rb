@@ -15,7 +15,7 @@ end
 def get_movies()
   query = "SELECT movies.id, title, year, rating, genres.name as genre, studios.name as studio
             FROM movies
-            LEFT JOIN studios on studios.id = movies.stuido_id
+            LEFT JOIN studios on studios.id = movies.studio_id
             LEFT JOIN genres on genres.id = movies.genre_id"
   movies = db_connection do |conn|
     conn.exec(query)
