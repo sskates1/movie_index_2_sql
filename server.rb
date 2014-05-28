@@ -1,6 +1,6 @@
 require_relative 'server_methods'
-require sinatra
-require pg
+require 'sinatra'
+require 'pg'
 
 get '/' do
 	erb :index
@@ -14,7 +14,7 @@ get '/:movie' do
 	erb :movie
 end
 
-giet '/actors' do
+get '/actors' do
 	erb :actors
 end
 
