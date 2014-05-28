@@ -7,6 +7,7 @@ get '/' do
 end
 
 get '/movies' do
+	@movies = get_movies
 	erb :movies
 end
 
@@ -15,6 +16,7 @@ get '/:movie' do
 end
 
 get '/actors' do
+	@actors = get_actors
 	erb :actors
 end
 
