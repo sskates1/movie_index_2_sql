@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Actors List</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
 
-  <body>
-    <h1>
-      List of Actors:
-    </h1><br/><br/>
-      <ul>
-        <% @actors.each do |actor_info| %>
-          <li><a href="/actors/<%="#{actor_info[:id]}"%>"><%="#{actor_info[:name]}"%></a></li>
-        <% end %>
-      </ul>
-      <br/><br/>
-      <a href="/">Back</a>
-    </h1>
-  </body>
-</html>
+<h1>
+  List of Actors:
+</h1>
+<br/>
+<br/>
+<ul>
+  <% @actors.each do |actor_info| %>
+    <li><a href="/actors/<%="#{actor_info["id"]}"%>"><%="#{actor_info["name"]}"%></a></li>
+  <% end %>
+</ul>
+<br/><br/>
+<a href="/">Back</a>
+

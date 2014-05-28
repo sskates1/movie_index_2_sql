@@ -1,43 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Movies List</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
+<h1>
+  Table of Movies:
+</h1>
+<br/>
+<br/>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Rating</th>
+        <th>Genre</th>
+        <th>Studio</th>
 
-  <body>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movie.each do |movie_info| %>
 
-    <h1>
-      Table of Movies:
-    </h1><br/><br/>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Rating</th>
-            <th>Genre</th>
-            <th>Studio</th>
+        <li><a href="/movies/<%="#{movie_info["id"]}"%>"><%="#{movie_info["title"]}"%></a></li>
 
-          </tr>
-        </thead>
-        <tbody>
-          <% @movies.each do |movie_info| %>
-
-            <li><a href="/movies/<%="#{movie_info[:id]}"%>"><%="#{movie_info[:title]}"%></a></li>
-
-            <br/>
-          <% end %>
+        <br/>
+      <% end %>
 
 
-        </tbody>
-      </table>
-      <br/><br/>
-      <a href="http://localhost:4567/">Back</a>
-
-
-    </div>
-    </h1>
-  </body>
-</html>
+    </tbody>
+  </table>
+  <br/><br/>
+  <a href="/">Back</a>
+</div>
