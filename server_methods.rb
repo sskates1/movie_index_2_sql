@@ -30,7 +30,9 @@ def get_actors()
     conn.exec(querry)
   end
   actors = actors.to_a
-  actors = actors.sort
+  actors = actors.sort_by do |actor|
+    actors["name"]
+  end
   return actors
 end
 
