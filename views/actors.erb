@@ -12,8 +12,8 @@
       List of Actors:
     </h1><br/><br/>
       <ul>
-        <% @actors.each do |actor| %>
-          <li><a href="/actors/<%="#{actor}"%>"><%="#{actor}"%></a></li>
+        <% @actors.each do |actor_info| %>
+          <li><a href="/actors/<%="#{actor_info[:id]}"%>"><%="#{actor_info[:name]}"%></a></li>
         <% end %>
       </ul>
       <br/><br/>
