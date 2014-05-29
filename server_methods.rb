@@ -62,7 +62,7 @@ def get_actor(actor_id)
 end
 
 def get_movie(movie_id)
-  query = "SELECT movies.id, title, year, rating, genres.name as genre, studios.name as studio
+  query = "SELECT movies.id, title, year, rating, genres.name as genre, studios.name as studio, movies.synopsis
             FROM movies
             LEFT JOIN studios on studios.id = movies.studio_id
             LEFT JOIN genres on genres.id = movies.genre_id
